@@ -10,3 +10,18 @@
 
 @import '../components/posts';
 @import '../components/licensing_chart';
+
+.form__frame {
+    width: calc(100% + 3rem);
+    min-height: 80vh;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+@media (min-width: 768px) {
+    .form__frame {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

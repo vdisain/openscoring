@@ -12,4 +12,21 @@
       checkbox.checked = false
     })
   }
+
+  if (window.addEventListener) {
+    console.log('%cMessage event added', 'color: darkgray;')
+    window.addEventListener('message', onMessageReceived, false)
+  } else if (window.attachEvent) {
+    window.attachEvent('message', onMessageReceived)
+  }
+
+  function onMessageReceived(event) 
+  {
+    const iframe = document.querySelector('iframe[data-rescale]')
+    const height = parseInt(event.data)
+    if (isNaN(height)) {
+      return
+    }
+    iframe.height = height
+  }
 })()
